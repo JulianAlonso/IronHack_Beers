@@ -21,15 +21,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    Beer *beer = [[Beer alloc] initWithName:@"Heineken"];
-    beer.country = @"Holanda";
-    beer.alcoholGrade = 5;
-    beer.imageUrl = @"http://payload134.cargocollective.com/1/2/78699/4998518/HeinekenBottle_Final_WithIce_LowRes_1024.jpg";
-    
-    Beers *beers = [[Beers alloc] init];
-    [beers addBeer:beer];
-    [beers addBeer:beer];
-    [beers addBeer:beer];
+//    Beer *beer = [[Beer alloc] initWithName:@"Heineken"];
+//    beer.country = @"Holanda";
+//    beer.alcoholGrade = 5;
+//    beer.imageUrl = @"http://payload134.cargocollective.com/1/2/78699/4998518/HeinekenBottle_Final_WithIce_LowRes_1024.jpg";
+//    
+//    Beers *beers = [[Beers alloc] init];
+//    [beers addBeer:beer];
+//    [beers addBeer:beer];
+//    [beers addBeer:beer];
+
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"BeersDatabase" ofType:@"json"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/beer"];
+    Beers *beers = [[Beers alloc] initFromJSONUrl:url];
     
     UINavigationController *nc = (UINavigationController *)self.window.rootViewController;
     

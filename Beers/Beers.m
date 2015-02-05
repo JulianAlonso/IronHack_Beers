@@ -13,23 +13,79 @@
 
 @property (nonatomic, strong) NSMutableArray *beersDatabase;
 
+- (instancetype)initFromData:(NSData *)data;
+
 @end
 
 @implementation Beers
 
+- (instancetype)initFromJSONFile:(NSString *)filePath {
+    
+    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+    
+    return [self initFromData:jsonData];
+}
+
+- (instancetype)initFromJSONUrl:(NSURL *)url {
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    
+    return [self initFromData:jsonData];
+    
+}
+
+- (instancetype)initFromData:(NSData *)data {
+    self = [super init];
+    
+    if (!self) {
+        return nil;
+    }
+    
+    NSError * __autoreleasing error;
+    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+    if (jsonObjects) {
+        for (NSDictionary *dict in jsonObjects) {
+            Beer *beer = [Beer beer];
+            beer.name = dict[@"Brand"];
+            beer.country = dict[@"Country"];
+            beer.alcoholGrade = [dict[@"Alcohol"] unsignedIntegerValue];
+            
+            beer.imageUrl = dict[@"ImageUrl"];
+            
+            [self.beersDatabase addObject:beer];
+        }
+    }
+    
+    return self;
+    
+}
+
+- (instancetype)initFromPlistFile:(NSString *)filePath {
+    self = [super init];
+    
+    if (!self) {
+        return nil;
+    }
+    
+    NSArray *plistContent = [[NSArray alloc] initWithContentsOfFile:filePath];
+    [plistContent enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *beerData = (NSDictionary *)obj;
+        Beer *b = [[Beer alloc] initWithName:beerData[@"Brand"]];
+        b.country = beerData[@"Country"];
+        b.alcoholGrade = [beerData[@"Alcohol"] integerValue];
+        b.imageUrl = beerData[@"ImageUrl"];
+        
+        [self.beersDatabase addObject:b];
+    }];
+
+    return self;
+}
+
+
 - (NSMutableArray *)beersDatabase{
 	if (!_beersDatabase) {
 		_beersDatabase = [[NSMutableArray alloc] init];
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"BeersDatabase" ofType:@"plist"];
-		NSArray *plistContent = [[NSArray alloc] initWithContentsOfFile:path];
-		[plistContent enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			NSDictionary *beerData = (NSDictionary *)obj;
-			Beer *b = [[Beer alloc] initWithName:beerData[@"Brand"]];
-			b.country = beerData[@"Country"];
-			b.alcoholGrade = [beerData[@"Alcohol"] integerValue];
-			b.imageUrl = beerData[@"ImageUrl"];
-			[self.beersDatabase addObject:b];
-		}];
 	}
 	
 	return _beersDatabase;

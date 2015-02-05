@@ -11,6 +11,10 @@
 
 @interface Beers : NSObject
 
+- (instancetype)initFromJSONFile:(NSString *)filePath;
+- (instancetype)initFromJSONUrl:(NSURL *)url;
+- (instancetype)initFromPlistFile:(NSString *)filePath;
+
 - (void) addBeer:(Beer * )beer;
 - (NSArray *)allBeers;
 - (NSUInteger)count;
