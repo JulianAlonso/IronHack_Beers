@@ -8,6 +8,7 @@
 
 #import "BeerListTableViewController.h"
 #import "Beer.h"
+#import "BeerViewController.h"
 
 @interface BeerListTableViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellID"];
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellID"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -89,14 +90,20 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    BeerViewController *beerViewController = (BeerViewController *)segue.destinationViewController;
+    
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    
+    Beer *beer = [self.beers allBeers][index.row];
+    
+    beerViewController.beer = beer;
 }
-*/
+
 
 @end

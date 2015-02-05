@@ -31,9 +31,9 @@
 //    [beers addBeer:beer];
 //    [beers addBeer:beer];
 
-    //NSString *path = [[NSBundle mainBundle] pathForResource:@"BeersDatabase" ofType:@"json"];
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/beer"];
-    Beers *beers = [[Beers alloc] initFromJSONUrl:url];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BeersDatabase" ofType:@"json"];
+    //NSURL *url = [NSURL URLWithString:@"http://localhost:8080/beer"];
+    Beers *beers = [[Beers alloc] initFromJSONFile:path];
     
     UINavigationController *nc = (UINavigationController *)self.window.rootViewController;
     
