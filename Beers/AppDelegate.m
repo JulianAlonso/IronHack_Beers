@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Beer.h"
+#import "BeerViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    Beer *beer = [[Beer alloc] initWithName:@"Heineken"];
+    beer.country = @"Holanda";
+    beer.alcoholGrade = 5;
+    
+    BeerViewController *beerViewController = (BeerViewController *)self.window.rootViewController;
+    
+    beerViewController.beer = beer;
+    
+    
     return YES;
 }
 

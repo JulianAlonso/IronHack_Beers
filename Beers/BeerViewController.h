@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Beer.h"
 
-@interface ViewController : UIViewController
+@interface BeerViewController : UIViewController
+
+@property (strong, nonatomic)Beer *beer;
 
 
 @end

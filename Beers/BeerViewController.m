@@ -6,13 +6,17 @@
 //  Copyright (c) 2015 Julian Alonso. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BeerViewController.h"
 
-@interface ViewController ()
+@interface BeerViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *beerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *beerCountryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *beerAlcoholGradeLabel;
 
 @end
 
-@implementation ViewController
+@implementation BeerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +26,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    self.beerNameLabel.text = self.beer.name;
+    self.beerCountryLabel.text = self.beer.country;
+    self.beerAlcoholGradeLabel.text = [NSString stringWithFormat:@"%lu", self.beer.alcoholGrade];
+    
 }
 
 @end

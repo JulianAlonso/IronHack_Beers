@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		012D474D1A8365F900750079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D474C1A8365F900750079 /* main.m */; };
 		012D47501A8365F900750079 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D474F1A8365F900750079 /* AppDelegate.m */; };
-		012D47531A8365F900750079 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D47521A8365F900750079 /* ViewController.m */; };
+		012D47531A8365F900750079 /* BeerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D47521A8365F900750079 /* BeerViewController.m */; };
 		012D47561A8365F900750079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012D47541A8365F900750079 /* Main.storyboard */; };
 		012D47581A8365F900750079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012D47571A8365F900750079 /* Images.xcassets */; };
 		012D475B1A8365F900750079 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012D47591A8365F900750079 /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		012D474C1A8365F900750079 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		012D474E1A8365F900750079 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		012D474F1A8365F900750079 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		012D47511A8365F900750079 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		012D47521A8365F900750079 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		012D47511A8365F900750079 /* BeerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeerViewController.h; sourceTree = "<group>"; };
+		012D47521A8365F900750079 /* BeerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeerViewController.m; sourceTree = "<group>"; };
 		012D47551A8365F900750079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		012D47571A8365F900750079 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		012D475A1A8365F900750079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 				012D47701A836C5400750079 /* Model */,
 				012D474E1A8365F900750079 /* AppDelegate.h */,
 				012D474F1A8365F900750079 /* AppDelegate.m */,
-				012D47511A8365F900750079 /* ViewController.h */,
-				012D47521A8365F900750079 /* ViewController.m */,
+				012D47511A8365F900750079 /* BeerViewController.h */,
+				012D47521A8365F900750079 /* BeerViewController.m */,
 				012D47541A8365F900750079 /* Main.storyboard */,
 				012D47571A8365F900750079 /* Images.xcassets */,
 				012D47591A8365F900750079 /* LaunchScreen.xib */,
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				012D47761A836D3A00750079 /* Beers.m in Sources */,
-				012D47531A8365F900750079 /* ViewController.m in Sources */,
+				012D47531A8365F900750079 /* BeerViewController.m in Sources */,
 				012D47501A8365F900750079 /* AppDelegate.m in Sources */,
 				012D474D1A8365F900750079 /* main.m in Sources */,
 				012D47751A836D3A00750079 /* Beer.m in Sources */,
