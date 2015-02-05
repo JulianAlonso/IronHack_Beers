@@ -14,6 +14,8 @@
 		012D47581A8365F900750079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012D47571A8365F900750079 /* Images.xcassets */; };
 		012D475B1A8365F900750079 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012D47591A8365F900750079 /* LaunchScreen.xib */; };
 		012D47671A8365F900750079 /* BeersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D47661A8365F900750079 /* BeersTests.m */; };
+		012D47751A836D3A00750079 /* Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D47721A836D3A00750079 /* Beer.m */; };
+		012D47761A836D3A00750079 /* Beers.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D47741A836D3A00750079 /* Beers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		012D47601A8365F900750079 /* BeersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		012D47651A8365F900750079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		012D47661A8365F900750079 /* BeersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeersTests.m; sourceTree = "<group>"; };
+		012D47711A836D3A00750079 /* Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beer.h; sourceTree = "<group>"; };
+		012D47721A836D3A00750079 /* Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beer.m; sourceTree = "<group>"; };
+		012D47731A836D3A00750079 /* Beers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beers.h; sourceTree = "<group>"; };
+		012D47741A836D3A00750079 /* Beers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		012D47491A8365F900750079 /* Beers */ = {
 			isa = PBXGroup;
 			children = (
+				012D47701A836C5400750079 /* Model */,
 				012D474E1A8365F900750079 /* AppDelegate.h */,
 				012D474F1A8365F900750079 /* AppDelegate.m */,
 				012D47511A8365F900750079 /* ViewController.h */,
@@ -117,6 +124,17 @@
 				012D47651A8365F900750079 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		012D47701A836C5400750079 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				012D47711A836D3A00750079 /* Beer.h */,
+				012D47721A836D3A00750079 /* Beer.m */,
+				012D47731A836D3A00750079 /* Beers.h */,
+				012D47741A836D3A00750079 /* Beers.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012D47761A836D3A00750079 /* Beers.m in Sources */,
 				012D47531A8365F900750079 /* ViewController.m in Sources */,
 				012D47501A8365F900750079 /* AppDelegate.m in Sources */,
 				012D474D1A8365F900750079 /* main.m in Sources */,
+				012D47751A836D3A00750079 /* Beer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
