@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Beer.h"
-#import "BeerViewController.h"
+
+#import "Beers.h"
+#import "BeerListTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,11 +24,18 @@
     Beer *beer = [[Beer alloc] initWithName:@"Heineken"];
     beer.country = @"Holanda";
     beer.alcoholGrade = 5;
+    beer.imageUrl = @"http://payload134.cargocollective.com/1/2/78699/4998518/HeinekenBottle_Final_WithIce_LowRes_1024.jpg";
     
-    BeerViewController *beerViewController = (BeerViewController *)self.window.rootViewController;
+    Beers *beers = [[Beers alloc] init];
+    [beers addBeer:beer];
+    [beers addBeer:beer];
+    [beers addBeer:beer];
     
-    beerViewController.beer = beer;
+    UINavigationController *nc = (UINavigationController *)self.window.rootViewController;
     
+    BeerListTableViewController *beerTableViewController = (BeerListTableViewController *)nc.topViewController;
+    
+    beerTableViewController.beers = beers;
     
     return YES;
 }
