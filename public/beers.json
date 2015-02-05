@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Heineken",
+        "country": "Holanda",
+        "imageUrl": "xxx",
+        "alcoholGrade": 5
+    },
+    {
+        "name": "Mahou",
+        "country": "Holanda",
+        "imageUrl": "xxx",
+        "alcoholGrade": 5
+    },
+    {
+        "name": "Cruzcampo",
+        "country": "Holanda",
+        "imageUrl": "xxx",
+        "alcoholGrade": 5
+    }
+]
