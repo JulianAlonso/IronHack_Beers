@@ -19,6 +19,15 @@
 
 @implementation BeerViewController
 
+- (void)setBeer:(Beer *)beer {
+    
+    [_beer removeObserver:self forKeyPath:@"name"];
+    
+    _beer = beer;
+    
+    [_beer addObserver:self forKeyPath:@"name" options:0 context: NULL];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -51,6 +60,24 @@
             self.beerImageView.image = [UIImage imageWithData:imageData];
         });
     });
+    
+}
+
+- (IBAction)updateAction {
+    
+    self.beer.name = @"Changed";
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    self.beerNameLabel.text = self.beer.name;
+    
+}
+
+- (void)dealloc {
+    
+    [self.beer removeObserver:self forKeyPath:@"name"];
     
 }
 

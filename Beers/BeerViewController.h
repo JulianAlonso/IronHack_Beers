@@ -13,6 +13,5 @@
 
 @property (strong, nonatomic)Beer *beer;
 
-
 @end
 

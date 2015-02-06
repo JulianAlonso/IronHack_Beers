@@ -102,8 +102,19 @@
     
     Beer *beer = [self.beers allBeers][index.row];
     
+//    [beer removeObserver:self forKeyPath:@"name"];
+    
+    [beer addObserver:self forKeyPath:@"name" options:0 context:NULL];
+    NSLog(@"Añado observer");
     beerViewController.beer = beer;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    [self.tableView reloadData];
+    
+    [object removeObserver:self forKeyPath:@"name"];
+    NSLog(@"Remuevo observer");
+}
 
 @end
